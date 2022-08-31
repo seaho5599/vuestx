@@ -4,7 +4,7 @@
       <a href="#" class="logo">stx건설</a>
       <nav class="gnb">
         <ul class="depth1">
-          <li v-for="(item, index) in gnbdata" :key="index">
+          <li v-for="(item, index) in gnbData" :key="index">
             <a :href="item.mainlink">{{item.maintxt}}</a>
             <ul class="depth2">
               <li v-for="(subitem, subindex) in item.subdata" :key="subindex">
@@ -25,14 +25,18 @@
 
 <script>
   import {
-    onMounted
+    onMounted, computed
   } from 'vue';
   import $ from 'jquery';
+  import { useStore } from 'vuex'
 
   export default {
-    props: ['gnbdata'],
+  
 
     setup() {
+      const store = useStore();
+      const gnbData = computed(() => store.getters.getGnbData);
+      
       // vue 에서 화면에 html 등록시 실행
       onMounted(() => {
         // .header를 저장한다.
@@ -64,7 +68,9 @@
         });
 
       })
-      return {}
+      return {
+        gnbData
+      }
 
     }
   }

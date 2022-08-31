@@ -4,13 +4,13 @@
 
     <div class="wrap">
       <!-- 상단영역 -->
-      <Header :gnbdata="gnbData" />
+      <Header  />
       <!-- 비주얼 -->
       <Visual />
       <!-- 업무파트 -->
       <Part />
       <!-- 새소식 -->
-      <News :ntdata="noticeData" :nsdata="newsData" />
+      <News  />
       <!-- 고객센터 -->
       <Cs />
       <!-- 소개 -->
@@ -172,9 +172,6 @@
           ]
         }
       ];
-
-
-
       const noticeData = [{
           url: 'a.html',
           title: '에스티엑스건설자산관리 주식회사 해산결의에 따른 채권신고 안내 공고 (2차)'
@@ -202,7 +199,6 @@
           title: "STX건설, 2018년 성장 '청신호'"
         }
       ];
-
       return {
         noticeData,
         newsData,
