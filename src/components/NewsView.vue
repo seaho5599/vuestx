@@ -34,7 +34,8 @@ import { useStore } from 'vuex'
       const store = useStore();
       const noticeData = computed(() => store.getters.getNoticeData);
       const newsData = computed(() => store.getters.getNewsData);
-      
+      store.dispatch('fetchNotice')
+      store.dispatch('fetchNews')
 
       return {
         noticeData,
