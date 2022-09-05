@@ -10,7 +10,7 @@ const state = {
 const actions = {
 
   fetchGnb({commit}) {
-    axios.get('/data/gnb.json')
+    axios.get('./data/gnb.json')
     .then(response =>{
       commit('GNB_INIT', response.data)
     })
@@ -18,7 +18,7 @@ const actions = {
   },
 
   fetchNews({commit}) {
-    axios.get('/data/news.json')
+    axios.get('./data/news.json')
     .then(response => {
       commit('NEWS_INIT', response.data)
     })
@@ -26,7 +26,7 @@ const actions = {
   },
 
   fetchNotice({commit}) {
-    axios.get('/data/notice.json')
+    axios.get('./data/notice.json')
     .then(response => {
       commit('NOTICE_INIT', response.data)
     })
